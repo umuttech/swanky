@@ -1,6 +1,5 @@
 const Discord = require("discord.js")
 const fetch = require('node-fetch');
-const token =  'ODk5ODI1MTYzNjk5MzU1NjY4.G3QTK3.X9iGB6azOjpAdVlfbugthA3DzRUxfuyV2i0WnY'
 
 module.exports = {
     slash: false, //kodun slash olmadığını belirttik.
@@ -9,7 +8,8 @@ module.exports = {
     kategori: "Genel",
     async execute(client, message, args) {
       
-          const user = message.mentions.users.first() || client.users.cache.get(args[0]) || message.author;
+      const token = process.env.TOKEN || client.token;
+      const user = message.mentions.users.first() || client.users.cache.get(args[0]) || message.author;
     let uid = user.id
     let response = fetch(`https://discord.com/api/v8/users/${uid}`, {
         method: 'GET',

@@ -1,4 +1,5 @@
 //botun main dosyası 
+require("dotenv").config();
 
 const Discord = require("discord.js"); //V13
 const client = new Discord.Client({intents: 98303})
@@ -2015,4 +2016,4 @@ client.on('interactionCreate', async interaction => {
 })
 // ============================= HERKESE AÇIK KOMUTLAR SON ============================= \\
 
-client.login(ayarlar.token);
+client.login(process.env.TOKEN || ayarlar.token);
