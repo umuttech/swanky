@@ -19,7 +19,7 @@
     "discord-akairo": "^8.1.0",
     "discord-api-types": "^0.33.3",
     "discord-player": "^5.3.1",
-    "discord.js": "^13.10.2",
+    "discord.js": "^13.17.1",
     "discord.js-akinator": "^4.0.1",
     "dotenv": "^17.4.2",
     "enmap": "^5.9.0",
