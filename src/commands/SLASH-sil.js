@@ -30,7 +30,7 @@ module.exports = {
     } catch (err) {}
 
     try {
-        interaction.reply({ content: `<a:armors_onay1:990609433816092692> \`${clear}\` tane mesaj silindi` });
+        interaction.reply({ content: `\`${clear}\` tane mesaj silindi` });
         setTimeout(() => {
       interaction.deleteReply();
         }, 10000);

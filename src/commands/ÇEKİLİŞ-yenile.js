@@ -26,7 +26,7 @@ module.exports = {
         Math.floor(Math.random() * kullanici.length)];
         interaction.reply({content: "Çekiliş Başarıyla Yenilendi!", ephemeral: true})
         db.delete(`cekiliss_${interaction.channel.id}`);
-        interaction.channel.send("<a:armors_konfeti:990610008632860742> Tebrikler <@"+kazanan+">! Çekiliş Yenilendi Ve **"+data+"** Kazandın!")
+        interaction.channel.send("Tebrikler <@"+kazanan+">! Çekiliş Yenilendi Ve **"+data+"** Kazandın!")
 
   }
 }

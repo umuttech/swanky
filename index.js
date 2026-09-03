@@ -84,9 +84,9 @@ const { MessageButton, MessageActionRow } = require('discord.js')
 client.on("messageCreate",message=>{
   
   const embed2 = new Discord.MessageEmbed()
-.setDescription('<a:armors_onay:990226710924521502> **Prefixim:** s!\n' +
-'<a:armors_renkligalpler:994182567592984647> **s!yardım** & **/yardım** komutu ile de yardım menüsüne ve komutlara göz atabilirsin.\n' +
-'<a:armors_transparent_developer:992362481244713002> **Sahibim:** ⩛ Storm#6110 - <@606572330457497641>')
+.setDescription('**Prefixim:** s!\n' +
+'**s!yardım** & **/yardım** komutu ile de yardım menüsüne ve komutlara göz atabilirsin.\n' +
+'**Sahibim:** ⩛ Storm#6110 - <@606572330457497641>')
 .setColor("#7e7e7e")
 .setFooter({ text: client.user.username, iconURL: client.user.avatarURL()})
   
@@ -110,7 +110,7 @@ let channel = client.channels.cache.get("1005836510941171752")
 if(oldMember.roles.cache.has(boost)) {
 if(!newMember.roles.cache.has(boost)) channel.send({ content: `<@${oldMember.id}> sunucuda boostunu çekti :/` })
 } else {
-if(newMember.roles.cache.has(boost)) channel.send({ content: `<@${oldMember.id}> sunucuya boost bastı <a:armors_renkligalpler:994182567592984647>` })
+if(newMember.roles.cache.has(boost)) channel.send({ content: `<@${oldMember.id}> sunucuya boost bastı ` })
 }
 })
 
@@ -248,16 +248,16 @@ client.on('guildMemberAdd', async member => {
   
         const mapping = {
    " ": " ",
-   '0': '<a:armors_sifir:1010102593428660295>',
-   '1': '<a:armors_bir:1010101970087981056>',
-   '2': '<a:armors_iki:1010101995010535464>',
-   '3': '<a:armors_uc:1010102363907952640>',
-   '4': '<a:armors_dort:1010102421831294987>',
-   '5': '<a:armors_bes:1010102445382316043>',
-   '6': '<a:armors_alti:1010102494837346314>',
-   '7': '<a:armors_yedi:1010102510884757605>',
-   '8': '<a:armors_sekiz:1010102533848571955>',
-   '9': '<a:armors_dokuz:1010102556493631578>'
+   '0': '',
+   '1': '',
+   '2': '',
+   '3': '',
+   '4': '',
+   '5': '',
+   '6': '',
+   '7': '',
+   '8': '',
+   '9': ''
 }
   let üyesayısıı = `${member.guild.memberCount.toString()}`
      .split("")
@@ -269,11 +269,7 @@ if(sunucu){
   
   const embed = new Discord.MessageEmbed()
   
-  sunucu.send({ content: `${member}`, embeds: [embed.setDescription(`<a:armors_elmas:998292641320009849> Aramıza Hoş Geldin ${member} <a:armors_giris:990227364367728700> 
-
-<a:armors_elmas:998292641320009849> Seninle Beraber ${üyesayısıı} Kişi Olduk! <a:armors_renkligalpler:994182567592984647> 
-
-<a:armors_elmas:998292641320009849> Hesabın Oluşturulma Tarihi: \`${kuruluş}\` <:armors_evet:999251486083129415>`)]});
+  sunucu.send({ content: `${member}`, embeds: [embed.setDescription(`Aramıza Hoş Geldin ${member} Seninle Beraber ${üyesayısıı} Kişi Olduk! Hesabın Oluşturulma Tarihi: \`${kuruluş}\` `)]});
 }}
 })
 
@@ -284,16 +280,16 @@ let cdb = require("croxydb")
   
           const mapping = {
    " ": " ",
-   '0': '<a:armors_sifir:1010102593428660295>',
-   '1': '<a:armors_bir:1010101970087981056>',
-   '2': '<a:armors_iki:1010101995010535464>',
-   '3': '<a:armors_uc:1010102363907952640>',
-   '4': '<a:armors_dort:1010102421831294987>',
-   '5': '<a:armors_bes:1010102445382316043>',
-   '6': '<a:armors_alti:1010102494837346314>',
-   '7': '<a:armors_yedi:1010102510884757605>',
-   '8': '<a:armors_sekiz:1010102533848571955>',
-   '9': '<a:armors_dokuz:1010102556493631578>'
+   '0': '',
+   '1': '',
+   '2': '',
+   '3': '',
+   '4': '',
+   '5': '',
+   '6': '',
+   '7': '',
+   '8': '',
+   '9': ''
 }
   let üyesayısıı = `${member.guild.memberCount.toString()}`
      .split("")
@@ -305,9 +301,7 @@ if(sunucu){
   
   const embed = new Discord.MessageEmbed()
   
-  sunucu.send({ content: `\`${member.user.tag}\``, embeds: [embed.setDescription(`<a:armors_kizgin:1014213437745795152> \`${member.user.tag}\` Aramozdan Ayrıldı <a:armors_cikis:990227252534972416> 
-
-<a:armors_kizgin:1014213437745795152> Geriye ${üyesayısıı} Kişi Kaldık! <:armors_uzgunkedi:1014214186559082567>`)]});
+  sunucu.send({ content: `\`${member.user.tag}\``, embeds: [embed.setDescription(`\`${member.user.tag}\` Aramozdan Ayrıldı Geriye ${üyesayısıı} Kişi Kaldık! `)]});
 }}
 })
 
@@ -333,7 +327,7 @@ rdb.add(`reklamuyari_${message.author.id}`, 1) //uyarı puanı ekleme
 if (uyarisayisi == 1) {
 let uyari = new Discord.MessageEmbed()
 .setColor("Blue")
-.setDescription(`<a:armors_iptal:990609550153486357> <@${message.author.id}> Reklam yapmaya devam edersen atılacaksın (1/3)`)
+.setDescription(`<@${message.author.id}> Reklam yapmaya devam edersen atılacaksın (1/3)`)
 .setTimestamp()        
 message.channel.send({embeds: [uyari] })                
 }
@@ -341,7 +335,7 @@ message.channel.send({embeds: [uyari] })
 if(uyarisayisi == 2) {
 let uyari = new Discord.MessageEmbed()
 .setColor("Blue")
-.setDescription(`<a:armors_iptal:990609550153486357> <@${message.author.id}> Reklam yapmaya devam edersen atılacaksın (2/3)`)
+.setDescription(`<@${message.author.id}> Reklam yapmaya devam edersen atılacaksın (2/3)`)
 .setTimestamp()        
 message.channel.send({embeds:[uyari]})
 }
@@ -351,7 +345,7 @@ await message.member.kick({reason: "SwankyBot Reklam Engel Sistemi (Kick)"})
 
 let uyari = new Discord.MessageEmbed()
 .setColor("Blue")
-.setDescription(`<a:armors_onay:990226710924521502> <@${message.author.id}> 3 adet reklam uyarısı aldığı için kicklendi. Bir kez daha yaparsa yasaklanacak.`)
+.setDescription(`<@${message.author.id}> 3 adet reklam uyarısı aldığı için kicklendi. Bir kez daha yaparsa yasaklanacak.`)
 .setTimestamp()               
 message.channel.send({embeds:[uyari]}) 
 }
@@ -362,7 +356,7 @@ rdb.delete(`reklamuyari_${message.author.id}`)
 
 let uyari = new Discord.MessageEmbed()
 .setColor("Blue")
-.setDescription(`<a:armors_iptal:990609550153486357> <@${message.author.id}> kick yedikten sonra tekrar devam ettiği için yasaklandı.`)
+.setDescription(`<@${message.author.id}> kick yedikten sonra tekrar devam ettiği için yasaklandı.`)
 .setTimestamp()
 message.channel.send({embeds:[uyari]})
 }}}}
@@ -374,14 +368,14 @@ message.channel.send({embeds:[uyari]})
 client.on("interactionCreate", async(interaction) => {
     if(interaction.isButton) {
  if(interaction.customId === "saason") {
-if (!interaction.member.permissions.has("MANAGE_MESSAGES")) return interaction.reply({content:"<a:armors_iptal:990609550153486357> Bunu yapabilmek için `MESAJLARI YÖNET` yetkisine sahip olman gerek", ephemeral: true})
+if (!interaction.member.permissions.has("MANAGE_MESSAGES")) return interaction.reply({content:"Bunu yapabilmek için `MESAJLARI YÖNET` yetkisine sahip olman gerek", ephemeral: true})
 db.set(`saas_${interaction.guild.id}`, "on")
-  await interaction.update({content:"<a:armors_onay1:990609433816092692> Selam alma sistemi başarılı şekilde açıldı." , components: [],embeds:[]})
+  await interaction.update({content:"Selam alma sistemi başarılı şekilde açıldı." , components: [],embeds:[]})
 
     } else if(interaction.customId === "saasoff") {
-      if (!interaction.member.permissions.has("MANAGE_MESSAGES")) return interaction.reply({content:"<a:armors_iptal:990609550153486357> Bunu yapabilmek için `MESAJLARI YÖNET` yetkisine sahip olman gerek" ,ephemeral: true })
+      if (!interaction.member.permissions.has("MANAGE_MESSAGES")) return interaction.reply({content:"Bunu yapabilmek için `MESAJLARI YÖNET` yetkisine sahip olman gerek" ,ephemeral: true })
 db.delete(`saas_${interaction.guild.id}`)
-  await interaction.update({content:"<a:armors_iptal:990609550153486357> Selam alma sistemi başarılı şekilde kapatıldı." , components: [],embeds:[]})
+  await interaction.update({content:"Selam alma sistemi başarılı şekilde kapatıldı." , components: [],embeds:[]})
 
     }
     }
@@ -441,7 +435,7 @@ client.on("guildMemberAdd", (member) => {
     var rol = db.get(`otorol_${member.guild.id}`)
     member.roles.add(rol)
     const kanal = db.get(`otorolkanal_${member.guild.id}`);
-        client.channels.cache.get(kanal).send(`<a:armors_onay3:1010226775286100049>  \`${member.user.tag}\` **adlı kullanıcıya <@&${rol}> rolü başarıyla verildi.**`)
+        client.channels.cache.get(kanal).send(`\`${member.user.tag}\` **adlı kullanıcıya <@&${rol}> rolü başarıyla verildi.**`)
 }
          )
 
@@ -506,16 +500,16 @@ client.on("guildMemberAdd", (member) => {
       
       const mapping = {
    " ": " ",
-   '0': '<a:armors_sifir:1010102593428660295>',
-   '1': '<a:armors_bir:1010101970087981056>',
-   '2': '<a:armors_iki:1010101995010535464>',
-   '3': '<a:armors_uc:1010102363907952640>',
-   '4': '<a:armors_dort:1010102421831294987>',
-   '5': '<a:armors_bes:1010102445382316043>',
-   '6': '<a:armors_alti:1010102494837346314>',
-   '7': '<a:armors_yedi:1010102510884757605>',
-   '8': '<a:armors_sekiz:1010102533848571955>',
-   '9': '<a:armors_dokuz:1010102556493631578>'
+   '0': '',
+   '1': '',
+   '2': '',
+   '3': '',
+   '4': '',
+   '5': '',
+   '6': '',
+   '7': '',
+   '8': '',
+   '9': ''
 }
   let üyesayısı = `${member.guild.memberCount.toString()}`
      .split("")
@@ -524,24 +518,24 @@ client.on("guildMemberAdd", (member) => {
   
   var kontrol;
 if (kurulus < 1296000000) {
-kontrol = `<a:armors_unlem:1010142831748329562>  \`Güvenilir Değil!\``
+kontrol = `\`Güvenilir Değil!\``
 }
-if (kurulus > 1296000000) kontrol = `<a:armors_onay6:1010232143919718420> \`Güvenilir!\``
+if (kurulus > 1296000000) kontrol = `\`Güvenilir!\``
       
 const girismesaj = new MessageEmbed()
 .setTitle(`Yeni Üye Aramıza Katıldı ${member.user.tag}`)
 .setThumbnail(member.displayAvatarURL())
 .setColor("#7e7e7e")
-.setDescription(`<a:armors_mutluu:990228733308833792> **Sunucumuza hoş geldin ${member}**
+.setDescription(`**Sunucumuza hoş geldin ${member}**
 
-<a:armors_renkligalpler:994182567592984647> **Seninle birlikte ${üyesayısı} kişi olduk!**
+**Seninle birlikte ${üyesayısı} kişi olduk!**
 
-<a:armors_yukleme:990229887954587678> Kayıt olmak için yetkilileri beklemen yeterli olacaktır.
+Kayıt olmak için yetkilileri beklemen yeterli olacaktır.
 
-<a:armors_onay1:990609433816092692> Yetkililer aşağıdaki butonlardan kayıt yapabilir.
+Yetkililer aşağıdaki butonlardan kayıt yapabilir.
 
-> <a:armors_saat:994660462140604416> Hesabın açılış zamanı: \`${kuruluş}\`
-> <:armors_guard:1009870782870065152> Hesap güvenilirliği: ${kontrol}
+> Hesabın açılış zamanı: \`${kuruluş}\`
+> Hesap güvenilirliği: ${kontrol}
 `)
 
 
@@ -648,9 +642,9 @@ client.on('interactionCreate', async interaction => {
    const hgmesaj = new MessageEmbed()
    .setTitle(`Hoş Geldin!`)
    .setThumbnail(interaction.guild.members.cache.get(üye).displayAvatarURL())
-   .setDescription(`<a:armors_giris:990227364367728700>  <@${interaction.guild.members.cache.get(üye).id}> sunucuya <@&${erkekrol}> rolü ile katıldı!`)
-   .addField(`<a:armors_onay3:1010226775286100049> Kayıt işlemini yapan yetkili`, `<@${interaction.member.id}>`, true)
-   .addField(`<a:armors_mutluu:990228733308833792> Sunucuya hoş geldin!`, `<@${interaction.guild.members.cache.get(üye).id}>`, true)
+   .setDescription(`<@${interaction.guild.members.cache.get(üye).id}> sunucuya <@&${erkekrol}> rolü ile katıldı!`)
+   .addField(`Kayıt işlemini yapan yetkili`, `<@${interaction.member.id}>`, true)
+   .addField(`Sunucuya hoş geldin!`, `<@${interaction.guild.members.cache.get(üye).id}>`, true)
    .setFooter(client.user.username + ' Kayıt Sistemi', client.user.avatarURL())
    
    
@@ -743,9 +737,9 @@ client.on('interactionCreate', async interaction => {
    const hgmesaj = new MessageEmbed()
    .setTitle(`Hoş Geldin!`)
    .setThumbnail(interaction.guild.members.cache.get(üye).displayAvatarURL())
-   .setDescription(`<a:armors_giris:990227364367728700>  <@${interaction.guild.members.cache.get(üye).id}> sunucuya <@&${kızrol}> rolü ile katıldı!`)
-   .addField(`<a:armors_onay3:1010226775286100049> Kayıt işlemini yapan yetkili`, `<@${interaction.member.id}>`, true)
-   .addField(`<a:armors_mutluu:990228733308833792> Sunucuya hoş geldin!`, `<@${interaction.guild.members.cache.get(üye).id}>`, true)
+   .setDescription(`<@${interaction.guild.members.cache.get(üye).id}> sunucuya <@&${kızrol}> rolü ile katıldı!`)
+   .addField(`Kayıt işlemini yapan yetkili`, `<@${interaction.member.id}>`, true)
+   .addField(`Sunucuya hoş geldin!`, `<@${interaction.guild.members.cache.get(üye).id}>`, true)
    .setFooter(client.user.username + ' Kayıt Sistemi', client.user.avatarURL())
    
    
@@ -922,7 +916,7 @@ let yazı = cdb.fetch(`yazı_${message.author.id}`)
 let mod = cdb.fetch(`rol_${message.guild.id}`)
 if (!yazı) return;
 if (message.content === yazı) {
-message.react("<a:armors_onay1:990609433816092692>")
+message.react("")
 message.reply({ content: `Doğrulama Tamamlandı ve Rolün Verildi.` })
 message.guild.members.cache.get(message.author.id).roles.add(mod)
 cdb.delete(`yazı_${message.author.id}`)
@@ -1081,11 +1075,11 @@ let var1 = ms(time)
 .setDescription(`
 ${açıklama}
 
-<a:armors_saat:994660462140604416> **Süre:** <t:${Math.floor(Date.now()/1000) + Math.floor(var1/1000)}:R> (<t:${Math.floor(Date.now() /1000) + Math.floor(var1/1000)}:f>)
-<a:armors_tacc:1014221717356412938> **Düzenleyen:** <@${interaction.user.id}>
+**Süre:** <t:${Math.floor(Date.now()/1000) + Math.floor(var1/1000)}:R> (<t:${Math.floor(Date.now() /1000) + Math.floor(var1/1000)}:f>)
+**Düzenleyen:** <@${interaction.user.id}>
 :reminder_ribbon: **Kazanan:** **\`1\`**
-<:armors_users:1022558807651532830> **Katılımcı:** **\`0\`**`);
-interaction.reply({content: "<a:armors_onay6:1010232143919718420> Çekiliş Başarıyla Oluşturuldu.", ephemeral: true})
+**Katılımcı:** **\`0\`**`);
+interaction.reply({content: "Çekiliş Başarıyla Oluşturuldu.", ephemeral: true})
     interaction.channel.send({embeds: [embed], components: [row]}).then(mesaj => {
       çdb.set(`cekilis_${mesaj.id}`, interaction.user.id)
       çdb.push(`user_${mesaj.id}`, interaction.user.id)
@@ -1135,7 +1129,7 @@ client.on("interactionCreate", async (interaction) => {
       let açıklama = data.acıklama
  
       çdb.push(`user_${interaction.message.id}`, interaction.user.id)
-      interaction.reply({content: "<a:armors_onay6:1010232143919718420> Başarıyla çekilişe katıldın!", ephemeral: true})
+      interaction.reply({content: "Başarıyla çekilişe katıldın!", ephemeral: true})
       let katılımcı = çdb.get(`user_${interaction.message.id}`).length;
 
       const embed = new MessageEmbed()
@@ -1143,16 +1137,16 @@ client.on("interactionCreate", async (interaction) => {
       .setDescription(`
       ${açıklama}
       
-      <a:armors_saat:994660462140604416> **Süre:** <t:${sure}:R> (<t:${sure}:f>)
-      <a:armors_tacc:1014221717356412938> **Düzenleyen:** <@${hosted}>
+      **Süre:** <t:${sure}:R> (<t:${sure}:f>)
+      **Düzenleyen:** <@${hosted}>
       :reminder_ribbon: **Kazanan:** **\`1\`**
-      <:armors_users:1022558807651532830> **Katılımcı:** **\`${katılımcı}\`**`)
+      **Katılımcı:** **\`${katılımcı}\`**`)
       .setColor("AQUA")
       message.edit({embeds: [embed]})
     } else if(varmi.includes(interaction.user.id)) {
          
       çdb.unpush(`user_${interaction.message.id}`, interaction.user.id)
-      interaction.reply({ content: `<a:armors_onay6:1010232143919718420> Başarıyla çekilişten ayrıldın!` , ephemeral: true })
+      interaction.reply({ content: `Başarıyla çekilişten ayrıldın!` , ephemeral: true })
       let katılımcı = çdb.get(`user_${interaction.message.id}`).length;
       let odul = data.odul
       let sure = data.ex
@@ -1163,10 +1157,10 @@ client.on("interactionCreate", async (interaction) => {
       .setDescription(`
       ${açıklama}
       
-      <a:armors_saat:994660462140604416> **Süre:** <t:${sure}:R> (<t:${sure}:f>)
-      <a:armors_tacc:1014221717356412938> **Düzenleyen:** <@${hosted}>
+      **Süre:** <t:${sure}:R> (<t:${sure}:f>)
+      **Düzenleyen:** <@${hosted}>
       :reminder_ribbon: **Kazanan:** **\`1\`**
-      <:armors_users:1022558807651532830> **Katılımcı:** **\`${katılımcı}\`**`)
+      **Katılımcı:** **\`${katılımcı}\`**`)
       .setColor("AQUA")
       message.edit({embeds: [embed]})
     } else {
@@ -1175,17 +1169,17 @@ client.on("interactionCreate", async (interaction) => {
       let hosted = data.hosted
       let açıklama = data.acıklama
       çdb.push(`user_${interaction.message.id}`, interaction.user.id)
-      interaction.reply({content: "<a:armors_onay6:1010232143919718420> Başarıyla çekilişe katıldın!", ephemeral: true})
+      interaction.reply({content: "Başarıyla çekilişe katıldın!", ephemeral: true})
       let katılımcı = çdb.get(`user_${interaction.message.id}`).length;
       const embed = new MessageEmbed()
       .setTitle(odul)
       .setDescription(`
       ${açıklama}
       
-      <a:armors_saat:994660462140604416> **Süre:** <t:${sure}:R> (<t:${sure}:f>)
-      <a:armors_tacc:1014221717356412938> **Düzenleyen:** <@${hosted}>
+      **Süre:** <t:${sure}:R> (<t:${sure}:f>)
+      **Düzenleyen:** <@${hosted}>
       :reminder_ribbon: **Kazanan:** **1**
-      <:armors_users:1022558807651532830> **Katılımcı:** **\`${katılımcı}\`**`)
+      **Katılımcı:** **\`${katılımcı}\`**`)
       .setColor("AQUA")
       message.edit({embeds: [embed]})
     }
@@ -1231,17 +1225,17 @@ kanal.messages.fetch(data.mesajid).then(async mesaj => {
              .setDescription(`
 ${açıklama}
              
-<a:armors_unlem:1010142831748329562> **Sona Erdi:** <t:${Math.floor(Date.now() /1000)}:R> (<t:${Math.floor(Date.now() /1000)}:f>)
-<a:armors_tacc:1014221717356412938>  **Düzenleyen:** <@${data.hosted}>
+**Sona Erdi:** <t:${Math.floor(Date.now() /1000)}:R> (<t:${Math.floor(Date.now() /1000)}:f>)
+**Düzenleyen:** <@${data.hosted}>
 :reminder_ribbon: **Kazanan:** <@${winner}> 
-<:armors_users:1022558807651532830> **Katılımcı Sayısı:** **${katılımcı}**`)
+**Katılımcı Sayısı:** **${katılımcı}**`)
            mesaj.edit({embeds: [embed], components: []})  
     
             if(winner){
              çdb.set(`cekilis_${mesaj.id}`, data.odul);  
              çdb.delete(`cekilis_${channel.id}`);
             
-             kanal.send(`<a:armors_konfeti:990610008632860742> Tebrikler <@${winner}>! Çekiliş Sonlandı Ve **${data.odul}** Kazandın(ız)!`)
+             kanal.send(`Tebrikler <@${winner}>! Çekiliş Sonlandı Ve **${data.odul}** Kazandın(ız)!`)
            çdb.set(`son_${mesaj.id}`, true)
        
             } else {
@@ -1254,10 +1248,10 @@ ${açıklama}
              .setDescription(`
 ${açıklama}
              
-<a:armors_unlem:1010142831748329562> **Sona Erdi:** <t:${Math.floor(Date.now() /1000)}:R> (<t:${Math.floor(Date.now() /1000)}:f>)
-<a:armors_tacc:1014221717356412938> **Düzenleyen:** <@${data.hosted}>
+**Sona Erdi:** <t:${Math.floor(Date.now() /1000)}:R> (<t:${Math.floor(Date.now() /1000)}:f>)
+**Düzenleyen:** <@${data.hosted}>
 :reminder_ribbon: **Kazanan:** Bilinmiyor.
-<:armors_users:1022558807651532830> **Katılımcı:** **\`0\`**`) 
+**Katılımcı:** **\`0\`**`) 
 mesaj.edit({embeds: [embed], components: []})
 
          
@@ -1583,13 +1577,13 @@ client.on('interactionCreate', async interaction => {
 
         const mesaj = new Discord.MessageEmbed()
             .setTitle("Botlist Sistem Ayarları")
-            .addField("**<:armors_message:1011737452836307005> Log Kanalı**", `<#${log || "Ayarlanmadı!"}>`, true)
-            .addField("**<:armors_evet:999251486083129415> Onay Kanalı**", `<#${onayKanal || "Ayarlanmadı!"}>`, true)
-            .addField("**<:armors_book:994181553565466624> Bot Ekle Kanalı**", `<#${botEkle || "Ayarlanmadı!"}>`, true)
-            .addField("**<a:armors_cikis:990227252534972416>  Ayrıldı Log Kanalı**", `<#${ayrildiLog || "Ayarlanmadı!"}>`, true)
-            .addField("**<:armors_bots:998263060433219645> Bot Rolü**", `<@&${botRol || "Ayarlanmadı!"}>`, true)
-            .addField("**<:armors_developer_white:992363311339413524> Developer Rolü**", `<@&${devRol || "Ayarlanmadı!"}>`, true)
-            .addField("**<:armors_admin:992367683729363034> Yetkili Rolü**", `<@&${adminRol || "Ayarlanmadı!"}>`, true)
+            .addField("**Log Kanalı**", `<#${log || "Ayarlanmadı!"}>`, true)
+            .addField("**Onay Kanalı**", `<#${onayKanal || "Ayarlanmadı!"}>`, true)
+            .addField("**Bot Ekle Kanalı**", `<#${botEkle || "Ayarlanmadı!"}>`, true)
+            .addField("**Ayrıldı Log Kanalı**", `<#${ayrildiLog || "Ayarlanmadı!"}>`, true)
+            .addField("**Bot Rolü**", `<@&${botRol || "Ayarlanmadı!"}>`, true)
+            .addField("**Developer Rolü**", `<@&${devRol || "Ayarlanmadı!"}>`, true)
+            .addField("**Yetkili Rolü**", `<@&${adminRol || "Ayarlanmadı!"}>`, true)
             .setColor("#7e7e7e")
 
         const yetki = new Discord.MessageEmbed()

@@ -14,7 +14,7 @@ module.exports = {
     const web = config.website
 
   const embed = new MessageEmbed()
-.setTitle("<:armors_kanat1:998285655840919723> SwankyBot Bağlantılar <:armors_kanat2:998285898766635129> ")
+.setTitle("SwankyBot Bağlantılar ")
 .setDescription(`**[Beni Sunucuna Ekle](${davet})**
 **[Destek Sunucum](${destek})**
 **[Bana Oy Ver](${topgg})**

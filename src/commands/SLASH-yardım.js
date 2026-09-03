@@ -131,7 +131,7 @@ module.exports = {
        .setColor("#7e7e7e")
        .setThumbnail(`${i.member?.displayAvatarURL({dynamic: true}) || i.user.displayAvatarURL({dynamic: true})}`)
        .setTitle("Genel Yardım Menüsü")
-       .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Genel').map(cmd => `<a:armors_onay:990226710924521502> **!${cmd.name}** ${cmd.description}`).join("\n ")}`)
+       .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Genel').map(cmd => `**!${cmd.name}** ${cmd.description}`).join("\n ")}`)
        await i.update({embeds: [embed]}).catch(() => {})
      }
           
@@ -140,7 +140,7 @@ module.exports = {
       .setTitle("Eğlence Yardım Menüsü")
       .setThumbnail(`${i.member?.displayAvatarURL({dynamic: true}) || i.user.displayAvatarURL({dynamic: true})}`)
       .setColor("#7e7e7e")
-      .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Eğlence').map(cmd => `<a:armors_mutluu:990228733308833792> **!${cmd.name}** ${cmd.description}`).join("\n ")}`)
+      .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Eğlence').map(cmd => `**!${cmd.name}** ${cmd.description}`).join("\n ")}`)
       await i.update({embeds:[embed1]}).catch(() => {})
       
     } else if(i.values[0] === "logoy") { 
@@ -148,7 +148,7 @@ module.exports = {
       .setTitle("Logo Yardım Menüsü")
       .setThumbnail(`${i.member?.displayAvatarURL({dynamic: true}) || i.user.displayAvatarURL({dynamic: true})}`)
       .setColor("#7e7e7e")
-      .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Logo').map(cmd => `<:armors_kalpp:998285227082387496> **!${cmd.name}** ${cmd.description}`).join("\n ")}`)
+      .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Logo').map(cmd => `**!${cmd.name}** ${cmd.description}`).join("\n ")}`)
       await i.update({embeds:[embed]}).catch(() => {})
     } 
       else if(i.values[0] === "gıfy") { 
@@ -156,7 +156,7 @@ module.exports = {
       .setTitle("Gif Yardım Menüsü")
       .setThumbnail(`${i.member?.displayAvatarURL({dynamic: true}) || i.user.displayAvatarURL({dynamic: true})}`)
       .setColor("#7e7e7e")
-      .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Gif').map(cmd => `<:armors_bicak:1014649900052529163> **!${cmd.name}** ${cmd.description}`).join("\n ")}`)
+      .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Gif').map(cmd => `**!${cmd.name}** ${cmd.description}`).join("\n ")}`)
       await i.update({embeds:[embed]}).catch(() => {})
     } 
       else if(i.values[0] === "mody") { 
@@ -164,7 +164,7 @@ module.exports = {
       .setTitle("Moderasyon Yardım Menüsü")
       .setThumbnail(`${i.member?.displayAvatarURL({dynamic: true}) || i.user.displayAvatarURL({dynamic: true})}`)
       .setColor("#7e7e7e")
-      .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Moderasyon').map(cmd => `<:armors_admin:992367683729363034> **!${cmd.name}** ${cmd.description}`).join("\n ")}`)
+      .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Moderasyon').map(cmd => `**!${cmd.name}** ${cmd.description}`).join("\n ")}`)
       await i.update({embeds:[embed]}).catch(() => {})
     }
       else if(i.values[0] === "swy") { 
@@ -172,7 +172,7 @@ module.exports = {
       .setTitle("Sunucu Yardım Menüsü")
       .setThumbnail(`${i.member?.displayAvatarURL({dynamic: true}) || i.user.displayAvatarURL({dynamic: true})}`)
       .setColor("#7e7e7e")
-      .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Sunucu').map(cmd => `<a:armors_onay6:1010232143919718420> **!${cmd.name}** ${cmd.description}`).join("\n ")}`)
+      .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Sunucu').map(cmd => `**!${cmd.name}** ${cmd.description}`).join("\n ")}`)
       await i.update({embeds:[embed]}).catch(() => {})
     }
       else if(i.values[0] === "owy") { 
@@ -180,7 +180,7 @@ module.exports = {
       .setTitle("Sahip Yardım Menüsü")
       .setThumbnail(`${i.member?.displayAvatarURL({dynamic: true}) || i.user.displayAvatarURL({dynamic: true})}`)
       .setColor("#7e7e7e")
-      .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Sahip').map(cmd => `<a:armors_tacc:1014221717356412938> **!${cmd.name}** ${cmd.description}`).join("\n ")}`)
+      .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Sahip').map(cmd => `**!${cmd.name}** ${cmd.description}`).join("\n ")}`)
       await i.update({embeds:[embed]}).catch(() => {})
     }
       else if(i.values[0] === "kayıty") { 
@@ -188,16 +188,16 @@ module.exports = {
       .setTitle("Kayıt Sistemi Yardım Menüsü")
       .setThumbnail(`${i.member?.displayAvatarURL({dynamic: true}) || i.user.displayAvatarURL({dynamic: true})}`)
       .setColor("#7e7e7e")
-      .setDescription('<:armors_book:994181553565466624> **/kayıt-kur** Kayıt sistemini ayarlarsınız.\n' +
-'<:armors_book:994181553565466624> **/kayıt-sıfırla** Kayıt sistemini sıfırlarsınız.\n' +
-'<:armors_book:994181553565466624> **!kayıtsayı** Kayıt sayısı gösterir.\n' +
-'<:armors_book:994181553565466624> **!e** Üyeyi erkek olarak kaydedersiniz.\n' +
-'<:armors_book:994181553565466624> **!k** Üyeyi kız olarak kaydedersiniz.\n' +
-'<:armors_book:994181553565466624> **!tag** Sunucunuzda ayarladığınız tagı gösterir.\n'+
-'<:armors_book:994181553565466624> **!tagayarla** Sunucunuzda tag ayarlarsınız.\n'+
-'<:armors_book:994181553565466624> **!tagsıfırla** Sunucunuzda tagı sıfırlarsınız.\n'+
-'<:armors_book:994181553565466624> **!otoisimayarla** Sunucunuzda otomatik isim ayarlarsınız.\n'+
-'<:armors_book:994181553565466624> **!otoisimsıfırla** Sunucunuzda otomatik ismi sıfırlarsınız.')
+      .setDescription('**/kayıt-kur** Kayıt sistemini ayarlarsınız.\n' +
+'**/kayıt-sıfırla** Kayıt sistemini sıfırlarsınız.\n' +
+'**!kayıtsayı** Kayıt sayısı gösterir.\n' +
+'**!e** Üyeyi erkek olarak kaydedersiniz.\n' +
+'**!k** Üyeyi kız olarak kaydedersiniz.\n' +
+'**!tag** Sunucunuzda ayarladığınız tagı gösterir.\n'+
+'**!tagayarla** Sunucunuzda tag ayarlarsınız.\n'+
+'**!tagsıfırla** Sunucunuzda tagı sıfırlarsınız.\n'+
+'**!otoisimayarla** Sunucunuzda otomatik isim ayarlarsınız.\n'+
+'**!otoisimsıfırla** Sunucunuzda otomatik ismi sıfırlarsınız.')
       await i.update({embeds:[embed]}).catch(() => {})
     }
       else if(i.values[0] === "aby") { 
@@ -205,7 +205,7 @@ module.exports = {
       .setTitle("Abone Sistemi Yardım Menüsü")
       .setThumbnail(`${i.member?.displayAvatarURL({dynamic: true}) || i.user.displayAvatarURL({dynamic: true})}`)
       .setColor("#7e7e7e")
-      .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Abone').map(cmd => `<a:armors_youtube:1025811222228111420> **!${cmd.name}** ${cmd.description}`).join("\n ")}`)
+      .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Abone').map(cmd => `**!${cmd.name}** ${cmd.description}`).join("\n ")}`)
       await i.update({embeds:[embed1]}).catch(() => {})
       
     }
@@ -214,8 +214,8 @@ module.exports = {
       .setTitle("Doğrulama Sistemi Yardım Menüsü")
       .setThumbnail(`${i.member?.displayAvatarURL({dynamic: true}) || i.user.displayAvatarURL({dynamic: true})}`)
       .setColor("#7e7e7e")
-      .setDescription('<:armors_guard:1009870782870065152> **/doğrulama-kur** Resimli Doğrulama Sistemi ayarlarsınız.\n' +
-'<:armors_guard:1009870782870065152> **/doğrulama-sıfırla** Resimli Doğrulama Sistemini sıfırlarsınız.')
+      .setDescription('**/doğrulama-kur** Resimli Doğrulama Sistemi ayarlarsınız.\n' +
+'**/doğrulama-sıfırla** Resimli Doğrulama Sistemini sıfırlarsınız.')
       await i.update({embeds:[embed1]}).catch(() => {})
       
     }
@@ -224,7 +224,7 @@ module.exports = {
       .setTitle("Partnerlik Sistemi Yardım Menüsü")
       .setThumbnail(`${i.member?.displayAvatarURL({dynamic: true}) || i.user.displayAvatarURL({dynamic: true})}`)
       .setColor("#7e7e7e")
-      .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Partner').map(cmd => `<:armors_dcpartner:1014193198182182912> **!${cmd.name}** ${cmd.description}`).join("\n ")}`)
+      .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Partner').map(cmd => `**!${cmd.name}** ${cmd.description}`).join("\n ")}`)
       await i.update({embeds:[embed1]}).catch(() => {})
       
     }
@@ -233,9 +233,9 @@ module.exports = {
       .setTitle("Çekiliş Sistemi Yardım Menüsü")
       .setThumbnail(`${i.member?.displayAvatarURL({dynamic: true}) || i.user.displayAvatarURL({dynamic: true})}`)
       .setColor("#7e7e7e")
-      .setDescription('<:armors_cekilis:1029113172625469500> **/çekiliş-başlat** Bir çekiliş başlatırsın. (Aynı anda en fazla 1 çekiliş ve 1 kazanan.)\n' +
-'<:armors_cekilis:1029113172625469500> **/çekiliş-bitir** Bir çekiliş sonlandırırsın.\n' +
-'<:armors_cekilis:1029113172625469500> **/çekiliş-yenile** Bir çekiliş yenilersin.')
+      .setDescription('**/çekiliş-başlat** Bir çekiliş başlatırsın. (Aynı anda en fazla 1 çekiliş ve 1 kazanan.)\n' +
+'**/çekiliş-bitir** Bir çekiliş sonlandırırsın.\n' +
+'**/çekiliş-yenile** Bir çekiliş yenilersin.')
       await i.update({embeds:[embed1]}).catch(() => {})
       
     }
@@ -244,8 +244,8 @@ module.exports = {
       .setTitle("Bot List Sistemi Yardım Menüsü")
       .setThumbnail(`${i.member?.displayAvatarURL({dynamic: true}) || i.user.displayAvatarURL({dynamic: true})}`)
       .setColor("#7e7e7e")
-      .setDescription('<:armors_bots:998263060433219645> **/botlist-kur** Bot List sistemini kurarsınız.\n' + 
-'<:armors_bots:998263060433219645> **/botlist-kapat** Bot List sistemini kapatırsınız.')
+      .setDescription('**/botlist-kur** Bot List sistemini kurarsınız.\n' + 
+'**/botlist-kapat** Bot List sistemini kapatırsınız.')
       await i.update({embeds:[embed1]}).catch(() => {})
       
     }
@@ -254,9 +254,9 @@ module.exports = {
       .setTitle("Yetkili Alım Sistemi Yardım Menüsü")
       .setThumbnail(`${i.member?.displayAvatarURL({dynamic: true}) || i.user.displayAvatarURL({dynamic: true})}`)
       .setColor("#7e7e7e")
-      .setDescription('<:armors_evet:999251486083129415> **/başvuru-kur** Yetkili Alım sistemini kurarsınız.\n' + 
-'<:armors_evet:999251486083129415> **/başvuru-kapat** Yetkili Alım sistemini kapatırsınız.\n' +
-'<:armors_evet:999251486083129415> **/başvur** Başvuru Yaparsınız')
+      .setDescription('**/başvuru-kur** Yetkili Alım sistemini kurarsınız.\n' + 
+'**/başvuru-kapat** Yetkili Alım sistemini kapatırsınız.\n' +
+'**/başvur** Başvuru Yaparsınız')
       await i.update({embeds:[embed1]}).catch(() => {})
       
     }
@@ -274,7 +274,7 @@ module.exports = {
       .setTitle("Ekonomi Sistemi Yardım Menüsü")
       .setThumbnail(`${i.member?.displayAvatarURL({dynamic: true}) || i.user.displayAvatarURL({dynamic: true})}`)
       .setColor("#7e7e7e")
-      .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Ekonomi').map(cmd => `<:armors_market:1036247425599422485> **!${cmd.name}** ${cmd.description}`).join("\n ")}`)
+      .setDescription(`${client.commands.filter(cmd => cmd.kategori === 'Ekonomi').map(cmd => `**!${cmd.name}** ${cmd.description}`).join("\n ")}`)
       await i.update({embeds:[embed1]}).catch(() => {})
       
     }

@@ -36,7 +36,7 @@ let dcs = new Discord.MessageEmbed()
   .setColor('#EF00FE')
 message.channel.send({ embeds: [dcs] }).then(m => {
  
-m.react('<a:armors_renkligalpler:994182567592984647>') 
+m.react('') 
 
  
  })  

@@ -15,11 +15,11 @@ module.exports = {
       
 message.reply({content: `Şikayetiniz / Talebiniz Bildirildi! En Kısa Sürede Geri Dönüş Yapılıcakatır.\nAnlayışınız İçin Teşekkürler`})
 
-const armors = new Discord.MessageEmbed()
+const embed = new Discord.MessageEmbed()
 .addField(`**Kulanıcı Bilgileri**`, `> **__Kullanıcı ID:__** **\`${message.author.id}\`**\n> **__Kullanıcı Adı:__** **\`${message.author.username}\`**\n> **__Kullanıcı Tagı:__** **\`#${message.author.discriminator}\`**`)
 .addField("Kullanıcı Şikayeti", type)
 .setThumbnail(message.author.avatarURL)
- client.channels.cache.get(şikayetlog).send({content: `<@${message.author.id}> adlı kullanıcının __Şikayeti__` ,embeds:[armors]});;
+ client.channels.cache.get(şikayetlog).send({content: `<@${message.author.id}> adlı kullanıcının __Şikayeti__` ,embeds:[embed]});
        
     }
 }

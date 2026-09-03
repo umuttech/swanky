@@ -12,7 +12,7 @@ module.exports = {
 let not = args.slice(0).join(" ")
 if (!not) return message.reply("Lütfen bir not belirt!")
 
-message.reply("<a:armors_onay1:990609433816092692> Notun Başarıyla Kayıt Edildi!")
+message.reply("Notun Başarıyla Kayıt Edildi!")
 
 debe.set(`not_${message.author.id}`, not)
 }

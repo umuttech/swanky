@@ -10,7 +10,7 @@ module.exports = {
 async execute(client, message, args) {  
    const random = Math.floor(Math.random() * 99) + 1
    
-   message.reply(`:thinking: Hmm... Şanslı sayın **${random}** <a:armors_konfeti:990610008632860742> `)
+   message.reply(`:thinking: Hmm... Şanslı sayın **${random}** `)
   
 }
 }

@@ -13,7 +13,7 @@ module.exports = {
        kanal.clone(kanal.name, {reason: "Yeniden oluşturma"}).then(async knl => {
            knl.setPosition(kanal.position);
            kanal.delete();
-           knl.send(`<a:armors_onay:990226710924521502> Kanal Başarılı bir şekilde sıfırlandı.`)
+           knl.send(`Kanal Başarılı bir şekilde sıfırlandı.`)
         })
 }
 };

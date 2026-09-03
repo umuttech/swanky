@@ -12,7 +12,7 @@ module.exports = {
 
   
 
-if(!args[0]) return message.reply({ content: `<a:armors_iptal:990609550153486357> **Hatalı Kullanım!**
+if(!args[0]) return message.reply({ content: `**Hatalı Kullanım!**
 Ayarlamak İçin: \`s!hgbb aç #kanal\`
 Sıfırlamak İçin: \`s!hgbb kapat\`` })
   let kanal = message.mentions.channels.first()
@@ -21,7 +21,7 @@ Sıfırlamak İçin: \`s!hgbb kapat\`` })
   db.set(`cshgbb.${message.guild.id}`, kanal.id)
 if(!kanal) return message.reply("**Bir Kanal Belirtmedin!**")
     
- message.reply({ content: `**<a:armors_onay1:990609433816092692> Hoş Geldin - ByeBye Kanalı Başarıyla <#${kanal.id}> Olarak Ayarlandı!**`})
+ message.reply({ content: `**Hoş Geldin - ByeBye Kanalı Başarıyla <#${kanal.id}> Olarak Ayarlandı!**`})
     
   }
 

@@ -12,7 +12,7 @@ module.exports = {
     const prefix =  "!";
     if (!args[0]) {
 
-        return message.channel.send({ content: `<a:armors_iptal:990609550153486357> Lütfen Geçerli Bir Zaman Yaz!
+        return message.channel.send({ content: `Lütfen Geçerli Bir Zaman Yaz!
 Zaman Kavramları - h(saat), m(dakika), s(saniye)
 (Örnek -  ${prefix}yavaşmod 5s)` })
     }
@@ -21,16 +21,16 @@ Zaman Kavramları - h(saat), m(dakika), s(saniye)
     if (args[0] === 'off') {
         if (currentSlowmode === 0) {
 
-            return message.channel.send({ content: `<a:armors_iptal:990609550153486357> Yavaş Mod Zaten Kapalı!`})
+            return message.channel.send({ content: `Yavaş Mod Zaten Kapalı!`})
         }
         message.channel.setRateLimitPerUser(0)
 
-        return message.channel.send({ content: `<a:armors_onay1:990609433816092692> Yavaş Mod Kapatıldı!`})
+        return message.channel.send({ content: `Yavaş Mod Kapatıldı!`})
     }
 
     const time = ms(args[0]) / 1000
     if (isNaN(time)) {
-        return message.channel.send({ content: `<a:armors_iptal:990609550153486357> Lütfen Geçerli Bir Zaman Yaz!
+        return message.channel.send({ content: `Lütfen Geçerli Bir Zaman Yaz!
 Zaman Kavramları - h(saat), m(dakika), s(saniye)
 Örnek: ${prefix}yavaşmod 5s (Süre "5**s**" gibi yazılmaz ise çalışmaz.)`})
     }
@@ -48,7 +48,7 @@ Zaman Kavramları - h(saat), m(dakika), s(saniye)
     let slowmode = await message.channel.setRateLimitPerUser(time)
     let afterSlowmode = message.channel.rateLimitPerUser
     if (afterSlowmode > 0) {
-        return message.channel.send({ content: `<a:armors_onay1:990609433816092692> Yavaş Mod Başarıyla **${args[0]}** Olarak Ayarlandı!` })
+        return message.channel.send({ content: `Yavaş Mod Başarıyla **${args[0]}** Olarak Ayarlandı!` })
     }
       
     }

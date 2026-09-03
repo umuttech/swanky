@@ -13,10 +13,10 @@ module.exports = {
                 .setAuthor('#' + message.channel.name, message.guild.iconURL({dynamic: true}))
                 .addField(" ID",`${message.channel.id}`)
                 if (message.channel.nsfw) {
-                    embed.addField(" Uygunsuz İçerik", "<a:armors_onay1:990609433816092692>", true)
+                    embed.addField(" Uygunsuz İçerik", "", true)
                 }
                 else {
-                    embed.addField(" Uygunsuz İçerik", "<a:armors_iptal:990609550153486357>", true)
+                    embed.addField(" Uygunsuz İçerik", "", true)
                 }
                 embed.addField('Oluşturulduğu Tarih:', moment(message.channel.createdAt).format('DD/MM/YYYY'), true)
                 .setColor(3447003)

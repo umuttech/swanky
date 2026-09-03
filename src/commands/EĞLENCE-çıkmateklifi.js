@@ -13,7 +13,7 @@ module.exports = {
     const dmat = new Discord.MessageEmbed()
     .setColor('RANDOM')
     .setTimestamp()
-    .setTitle('Biri Sana Çıkma Teklifi Etti! <a:armors_renkligalpler:994182567592984647>')
+    .setTitle('Biri Sana Çıkma Teklifi Etti! ')
     .addField('Ne Cevap Vereceksin Ben de Merak Ettim :D', `Dostum Kabul Et Bence`)
     .addField('Teklif Eden Kişi :', `➽ ${message.author.username}`)
     .setFooter('Çıkma Teklifi')
@@ -21,7 +21,7 @@ module.exports = {
     const dmtamam = new Discord.MessageEmbed()
     .setColor('RANDOM')
     .setTimestamp()
-    .setTitle(`<a:armors_renkligalpler:994182567592984647> Çıkma Teklifi Ettin! DM'den Ona Yazdım`)
+    .setTitle(`Çıkma Teklifi Ettin! DM'den Ona Yazdım`)
     .setFooter('Çıkma Teklifi Ettin!')
     message.channel.send({embeds:[dmtamam]});
       

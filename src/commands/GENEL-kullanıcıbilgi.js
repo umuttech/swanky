@@ -13,7 +13,7 @@ module.exports = {
 
   let dark = message.guild.members.cache.filter(mr => mr.joinedTimestamp < storm.joinedTimestamp).size + 1
 
-  let armors = new Discord.MessageEmbed()
+  let embed = new Discord.MessageEmbed()
     .setTitle(storm.user.tag, client.user.avatarURL())
     .setThumbnail(storm.user.avatarURL())
     .setColor(storm.displayHexColor === '#000000' ? '#ffffff' : storm.displayHexColor)
@@ -28,7 +28,7 @@ module.exports = {
 **Kuruluş Tarihi:** ${moment(storm.user.createdTimestamp).format('LLLL')}`)
     .setFooter(client.user.username, client.user.avatarURL())
     .setTimestamp()
-  message.channel.send({embeds: [armors]})
+  message.channel.send({embeds: [embed]})
        
     }
 }

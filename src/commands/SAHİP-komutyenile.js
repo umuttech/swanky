@@ -7,7 +7,7 @@ module.exports = {
     kategori: "Sahip",
     async execute(client, message, args) {
 
-       if(message.author.id !== "606572330457497641") return message.reply(`<a:armors_iptal:990609550153486357> Sahibim sen değilsin dostum!`);
+       if(message.author.id !== "606572330457497641") return message.reply(`Sahibim sen değilsin dostum!`);
           var command = args[0];
     message.channel.send({ content: "`" + command + "` adlı komut yükleniyor..." })
       .then(m => {

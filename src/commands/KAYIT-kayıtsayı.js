@@ -22,8 +22,8 @@ const kayıtsayı = new MessageEmbed()
 .setThumbnail(message.member.displayAvatarURL({ size: 512}))
 .setDescription(`> Toplam Kayıt: **${toplamkayıt}**
 
-> <:armors_erkek_uye:998258145057046618> Erkek Kayıt: **${erkekkayıt}**
-> <:armors_bayan_uye:998258256055115863> Kız Kayıt: **${kızkayıt}**`)
+> Erkek Kayıt: **${erkekkayıt}**
+> Kız Kayıt: **${kızkayıt}**`)
 .setFooter(`Kayıt Sistemi - Kayıt Sayı`, client.user.avatarURL())
 .setTimestamp()
       

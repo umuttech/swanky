@@ -20,48 +20,48 @@ module.exports = {
     let x11;
     
     //yönetici
-    if (msg.member.permissions.has("ADMINISTRATOR")) x = "<a:armors_onay1:990609433816092692>"
-    if (!msg.member.permissions.has("ADMINISTRATOR")) x = "<a:armors_iptal:990609550153486357> "
+    if (msg.member.permissions.has("ADMINISTRATOR")) x = ""
+    if (!msg.member.permissions.has("ADMINISTRATOR")) x = ""
     
     //Denetim kaydı
-    if (msg.member.permissions.has("VIEW_AUDIT_LOG")) x2 = "<a:armors_onay1:990609433816092692>"
-    if (!msg.member.permissions.has("VIEW_AUDIT_LOG")) x2 = "<a:armors_iptal:990609550153486357> "
+    if (msg.member.permissions.has("VIEW_AUDIT_LOG")) x2 = ""
+    if (!msg.member.permissions.has("VIEW_AUDIT_LOG")) x2 = ""
     
     //Sunucuyu yönet
-    if (msg.member.permissions.has("MANAGE_GUILD")) x3 = "<a:armors_onay1:990609433816092692>"
-    if (!msg.member.permissions.has("MANAGE_GUILD")) x3 = "<a:armors_iptal:990609550153486357> "
+    if (msg.member.permissions.has("MANAGE_GUILD")) x3 = ""
+    if (!msg.member.permissions.has("MANAGE_GUILD")) x3 = ""
     
     //Rolleri yönet
-    if (msg.member.permissions.has("MANAGE_ROLES")) x4 = "<a:armors_onay1:990609433816092692>"
-    if (!msg.member.permissions.has("MANAGE_ROLES")) x4 = "<a:armors_iptal:990609550153486357> "
+    if (msg.member.permissions.has("MANAGE_ROLES")) x4 = ""
+    if (!msg.member.permissions.has("MANAGE_ROLES")) x4 = ""
     
     //Kanalları yönet
-    if (msg.member.permissions.has("MANAGE_CHANNELS")) x5 = "<a:armors_onay1:990609433816092692>"
-    if (!msg.member.permissions.has("MANAGE_CHANNELS")) x5 = "<a:armors_iptal:990609550153486357> "
+    if (msg.member.permissions.has("MANAGE_CHANNELS")) x5 = ""
+    if (!msg.member.permissions.has("MANAGE_CHANNELS")) x5 = ""
     
     //üyeleri at
-    if (msg.member.permissions.has("KICK_MEMBERS")) x6 = "<a:armors_onay1:990609433816092692>"
-    if (!msg.member.permissions.has("KICK_MEMBERS")) x6 = "<a:armors_iptal:990609550153486357> "
+    if (msg.member.permissions.has("KICK_MEMBERS")) x6 = ""
+    if (!msg.member.permissions.has("KICK_MEMBERS")) x6 = ""
     
     //üyeleri yasakla
-    if (msg.member.permissions.has("BAN_MEMBERS")) x7 = "<a:armors_onay1:990609433816092692>"
-    if (!msg.member.permissions.has("BAN_MEMBERS")) x7 = "<a:armors_iptal:990609550153486357> "
+    if (msg.member.permissions.has("BAN_MEMBERS")) x7 = ""
+    if (!msg.member.permissions.has("BAN_MEMBERS")) x7 = ""
     
     //mesajları yönet
-    if (msg.member.permissions.has("MANAGE_MESSAGES")) x8 = "<a:armors_onay1:990609433816092692>"
-    if (!msg.member.permissions.has("MANAGE_MESSAGES")) x8 = "<a:armors_iptal:990609550153486357> "
+    if (msg.member.permissions.has("MANAGE_MESSAGES")) x8 = ""
+    if (!msg.member.permissions.has("MANAGE_MESSAGES")) x8 = ""
     
     //kullanıcı adlarını yönet
-    if (msg.member.permissions.has("MANAGE_NICKNAMES")) x9 = "<a:armors_onay1:990609433816092692>"
-    if (!msg.member.permissions.has("MANAGE_NICKNAMES")) x9 = "<a:armors_iptal:990609550153486357> "
+    if (msg.member.permissions.has("MANAGE_NICKNAMES")) x9 = ""
+    if (!msg.member.permissions.has("MANAGE_NICKNAMES")) x9 = ""
     
     //emojileri yönet
-    if (msg.member.permissions.has("MANAGE_EMOJIS_AND_STICKERS")) x10 = "<a:armors_onay1:990609433816092692>"
-    if (!msg.member.permissions.has("MANAGE_EMOJIS_AND_STICKERS")) x10 = "<a:armors_iptal:990609550153486357> "
+    if (msg.member.permissions.has("MANAGE_EMOJIS_AND_STICKERS")) x10 = ""
+    if (!msg.member.permissions.has("MANAGE_EMOJIS_AND_STICKERS")) x10 = ""
     
     //webhookları yönet
-    if (msg.member.permissions.has("MANAGE_WEBHOOKS")) x11 = "<a:armors_onay1:990609433816092692>"
-    if (!msg.member.permissions.has("MANAGE_WEBHOOKS")) x11 = "<a:armors_iptal:990609550153486357> "
+    if (msg.member.permissions.has("MANAGE_WEBHOOKS")) x11 = ""
+    if (!msg.member.permissions.has("MANAGE_WEBHOOKS")) x11 = ""
      const embed = new Discord.MessageEmbed()
    .setTitle('Sunucudaki Yetkilerin')
   .setColor('GREEN')

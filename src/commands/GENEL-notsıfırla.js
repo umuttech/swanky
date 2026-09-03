@@ -8,7 +8,7 @@ module.exports = {
    kategori: "Genel",
    
    async execute(client, message, args) {
-message.reply("<a:armors_onay1:990609433816092692> Notun Başarıyla Sıfırlandı!")
+message.reply("Notun Başarıyla Sıfırlandı!")
 
 debe.delete(`not_${message.author.id}`)
 }

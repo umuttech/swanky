@@ -19,7 +19,7 @@ module.exports = {
     })
 
     } else { 
-        message.reply('<a:armors_iptal:990609550153486357> Sahibim sen değilsin dostum!')
+        message.reply('Sahibim sen değilsin dostum!')
     }
 
     }

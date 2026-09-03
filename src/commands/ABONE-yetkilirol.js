@@ -9,7 +9,7 @@ module.exports = {
   
   async execute(client, message, args) {
     
-     if (!message.member.permissions.has("ADMINISTRATOR"))return message.reply("<a:armors_iptal:990609550153486357> Bu Komutu Kullanmak için `YÖNETİCİ` Yetkisine Sahip Olman Gerek!");
+     if (!message.member.permissions.has("ADMINISTRATOR"))return message.reply("Bu Komutu Kullanmak için `YÖNETİCİ` Yetkisine Sahip Olman Gerek!");
     
     let rol = message.mentions.roles.first()
     

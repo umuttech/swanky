@@ -7,10 +7,10 @@ module.exports = {
     kategori: "Sahip",
     async execute(client, message, args) {
 
-       if(message.author.id !== "606572330457497641") return message.reply(`<a:armors_iptal:990609550153486357> Sahibim sen değilsin dostum!`);
+       if(message.author.id !== "606572330457497641") return message.reply(`Sahibim sen değilsin dostum!`);
       const sayMessage = args.join(` `);
       client.user.setActivity(sayMessage);
-      message.channel.send(`Oyun ismi **${sayMessage}** olarak değiştirildi <a:armors_onay:990226710924521502>`)
+      message.channel.send(`Oyun ismi **${sayMessage}** olarak değiştirildi `)
 
     }
 }

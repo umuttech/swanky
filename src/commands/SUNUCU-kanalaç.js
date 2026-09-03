@@ -7,7 +7,7 @@ module.exports = {
     kategori: "Sunucu",
     async execute(client, message, args) {
 
-        if (!message.member.permissions.has("MANAGE_CHANNELS")) return message.channel.send(`<a:armors_iptal:990609550153486357> Bu komutu kullanabilmek için **KANALLARI YÖNET** iznine sahip olmalısın!`);
+        if (!message.member.permissions.has("MANAGE_CHANNELS")) return message.channel.send(`Bu komutu kullanabilmek için **KANALLARI YÖNET** iznine sahip olmalısın!`);
 
     let kanal = args.slice(0).join(' ')
     if (!kanal) return message.reply('Lütfen oluşturacağım kanalın adını yazın.')

@@ -78,9 +78,9 @@ module.exports = {
    const hgmesaj = new MessageEmbed()
    .setTitle(`Hoş Geldin!`)
    .setThumbnail(message.guild.members.cache.get(üye.id).displayAvatarURL())
-   .setDescription(`<a:armors_giris:990227364367728700>  <@${message.guild.members.cache.get(üye.id).id}> sunucuya <@&${erkekrol}> rolü ile katıldı!`)
-   .addField(`<a:armors_onay3:1010226775286100049> Kayıt işlemini yapan yetkili`, `<@${message.member.id}>`, true)
-   .addField(`<a:armors_mutluu:990228733308833792> Sunucuya hoş geldin!`, `<@${message.guild.members.cache.get(üye.id).id}>`, true)
+   .setDescription(`<@${message.guild.members.cache.get(üye.id).id}> sunucuya <@&${erkekrol}> rolü ile katıldı!`)
+   .addField(`Kayıt işlemini yapan yetkili`, `<@${message.member.id}>`, true)
+   .addField(`Sunucuya hoş geldin!`, `<@${message.guild.members.cache.get(üye.id).id}>`, true)
    .setFooter(client.user.username + ' Kayıt Sistemi - Erkek', client.user.avatarURL())
    
    db.delete(`yenıuye_${message.guild.id}`)

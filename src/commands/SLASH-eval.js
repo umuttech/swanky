@@ -17,7 +17,7 @@ module.exports = {
 	async execute(client, interaction) { 
         const code = interaction.options.getString("kod")
 
-        if (interaction.user.id !== "606572330457497641") return interaction.reply("`<a:armors_iptal:990609550153486357> Sahibim sen değilsin dostum!");
+        if (interaction.user.id !== "606572330457497641") return interaction.reply("`Sahibim sen değilsin dostum!");
         try {
           var evaled = eval(code);
           if (typeof evaled !== "string") evaled = require("util").inspect(evaled);

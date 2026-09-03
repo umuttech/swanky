@@ -13,7 +13,7 @@ module.exports = {
       
        message.channel.send({embeds: [storm]});
   
-message.react('<a:armors_onay:990226710924521502>')
+message.react('')
 
     }
 }

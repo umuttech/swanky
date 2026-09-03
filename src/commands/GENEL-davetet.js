@@ -20,7 +20,7 @@ let buton = new MessageButton()
 
 let embed = new MessageEmbed()
 .setThumbnail(client.user.displayAvatarURL({ size: 64 }))
-.addField("**SwankyBot - Davet Et**", `<:armors_bots:998263060433219645> | **[Beni Bu Linkten Sunucunuza Ekleyebilirsiniz](https://discord.com/oauth2/authorize?client_id=899825163699355668&scope=bot&permissions=27648876671)**`)
+.addField("**SwankyBot - Davet Et**", `| **[Beni Bu Linkten Sunucunuza Ekleyebilirsiniz](https://discord.com/oauth2/authorize?client_id=899825163699355668&scope=bot&permissions=27648876671)**`)
 .setFooter("SwankyBot - İyi Günler Dileriz...")
 
 message.channel.send({embeds: [embed], components: [new MessageActionRow({ components: [buton]})]}).then(async msg => {
@@ -54,7 +54,7 @@ let buton = new MessageButton()
 
 let embed = new MessageEmbed()
 .setThumbnail(client.user.displayAvatarURL({ size: 64 }))
-.addField("**DarkBOT - Davet**", `<:armors_bots:998263060433219645> | **[Beni Bu Linkten Sunucunuza Ekleyebilirsiniz]( https://discord.com/oauth2/authorize?client_id=899825163699355668&scope=bot&permissions=27648876671)**`)
+.addField("**DarkBOT - Davet**", `| **[Beni Bu Linkten Sunucunuza Ekleyebilirsiniz]( https://discord.com/oauth2/authorize?client_id=899825163699355668&scope=bot&permissions=27648876671)**`)
 .setFooter("DarkBOT - İyi Günler Dileriz...")
 .setColor('#0027ff')
 
