@@ -7,20 +7,7 @@ client.setMaxListeners(0);
 require("./src/base/app.js")(client)
 const ayarlar = require("./src/base/settings.json")
 
-// ========== EXPRESS WEB SUNUCUSU ========== \\
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
 
-// Web / Sağlık kontrolü için ping adresi
-app.get('/', (req, res) => {
-  res.send('Bot 7/24 aktif durumda!');
-});
-
-app.listen(port, () => {
-  console.log(`Express sunucusu ${port} portunda çalışıyor.`);
-});
-// ==================================================== \\
 
 // ========== ANTI CRASH (ÇÖKME ÖNLEYİCİ) ========== \\
 process.on('unhandledRejection', (reason, promise) => {

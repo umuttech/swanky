@@ -23,7 +23,6 @@
     "discord.js-akinator": "^4.0.1",
     "dotenv": "^17.4.2",
     "enmap": "^5.9.0",
-    "express": "^4.18.2",
     "figlet": "^1.5.2",
     "har-validator": "^5.1.5",
     "inflames.db": "^2.5.3",
