@@ -2,6 +2,27 @@
 require("dotenv").config();
 
 const Discord = require("discord.js"); //V13
+
+// ========== DISCORD.JS V13 CHANNEL PATCH ========== \\
+const { BaseChannel, Channel } = Discord;
+if (BaseChannel) {
+  BaseChannel.prototype.isText = function () {
+    return typeof this.isTextBased === "function" ? this.isTextBased() : true;
+  };
+  BaseChannel.prototype.isTextBased = function () {
+    return true;
+  };
+}
+if (Channel) {
+  Channel.prototype.isText = function () {
+    return typeof this.isTextBased === "function" ? this.isTextBased() : true;
+  };
+  Channel.prototype.isTextBased = function () {
+    return true;
+  };
+}
+// ================================================== \\
+
 const client = new Discord.Client({intents: 98303})
 client.setMaxListeners(0);
 require("./src/base/app.js")(client)
