@@ -49,8 +49,8 @@ process.on('uncaughtExceptionMonitor', (err, origin) => {
     client.on('ready', () => {
   
       var actvs = [
-        `${ayarlar.prefix}yardım ${client.guilds.cache.size} sunucuyu`,
-        `${ayarlar.prefix}help`,
+        `/yardım | ${client.guilds.cache.size} sunucu`,
+        `/yardım | Komutlar için /yardım`,
         `${client.guilds.cache.size} Servers | ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Users`,
         `Yeniden Aranızdayım!`,
         `Yüksek Gecikme Uyarısı!`,
@@ -68,8 +68,8 @@ process.on('uncaughtExceptionMonitor', (err, origin) => {
       console.log (`Kullanıcı İsmi     : ${client.user.username}`);
       console.log (`Sunucular          : ${client.guilds.cache.size}`);
       console.log (`Kullanıcılar       : ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}`);
-      console.log (`Komut Sayısı       : ${client.commands.size}`);
-      console.log (`Prefix             : ${ayarlar.prefix}`);
+      console.log (`Komut Sayısı       : ${client.slashcommands.size + client.commands.size}`);
+      console.log (`Komutlar           : Slash Komutlar (/)`); 
       console.log (`Durum              : Bot Tekrardan Kullanıma Hazır!`);
       console.log ('_________________________________________');
     
@@ -1019,7 +1019,7 @@ const modal1 = new Modal()
    
 client.on('interactionCreate', async (interaction) => {
 
-	if (interaction.commandName ==="çekiliş-başlat") {    
+	if (interaction.commandName === "çekiliş-başlat" || (interaction.commandName === "cekilis" && interaction.options?.getSubcommand(false) === "baslat")) {    
     await interaction.showModal(modal1);
 	}
 })

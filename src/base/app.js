@@ -15,63 +15,115 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const eventFiles = fs.readdirSync(eventsPath).filter((file) => file.endsWith(".js"));
 const commandFiles = fs.readdirSync(commandsPath).filter((file) => file.endsWith(".js"));
 
+function addOptionTo(builder, opt) {
+  const isRequired = !!(opt.require || opt.required);
+  const addChoicesIfAny = (optionBuilder) => {
+    if (opt.choices && Array.isArray(opt.choices) && opt.choices.length > 0) {
+      optionBuilder.addChoices(...opt.choices);
+    }
+    return optionBuilder;
+  };
+
+  switch (opt.type) {
+    case 'string':
+      builder.addStringOption(o => addChoicesIfAny(o.setName(opt.name).setDescription(opt.description).setRequired(isRequired)));
+      break;
+    case 'integer':
+      builder.addIntegerOption(o => addChoicesIfAny(o.setName(opt.name).setDescription(opt.description).setRequired(isRequired)));
+      break;
+    case 'number':
+      builder.addNumberOption(o => addChoicesIfAny(o.setName(opt.name).setDescription(opt.description).setRequired(isRequired)));
+      break;
+    case 'boolean':
+      builder.addBooleanOption(o => o.setName(opt.name).setDescription(opt.description).setRequired(isRequired));
+      break;
+    case 'user':
+      builder.addUserOption(o => o.setName(opt.name).setDescription(opt.description).setRequired(isRequired));
+      break;
+    case 'channel':
+      builder.addChannelOption(o => o.setName(opt.name).setDescription(opt.description).setRequired(isRequired));
+      break;
+    case 'role':
+      builder.addRoleOption(o => o.setName(opt.name).setDescription(opt.description).setRequired(isRequired));
+      break;
+    case 'mentionable':
+      builder.addMentionableOption(o => o.setName(opt.name).setDescription(opt.description).setRequired(isRequired));
+      break;
+  }
+}
+
 module.exports = (client) => {
   client.commands = new Collection();
   client.slashcommands = new Collection();
-    for (const file of eventFiles) {
-      const filePath = path.join(eventsPath, file);
-      const event = require(filePath);
-      if (event.once) {
-        client.once(event.name, (...args) => event.execute(...args, client));
-      } else {
-        client.on(event.name, (...args) => event.execute(...args, client));
-      }
-    };
 
-    for (const file of commandFiles) {
-      const filePath = path.join(commandsPath, file);
-      const command = require(filePath);
-      if(command.slash) {
-        client.slashcommands.set(command.name[0], command)
-        const slashCommand = new SlashCommandBuilder()
-        .setName(command.name[0])
-        .setDescription(command.description)
-        if(command.option) {
-          for(var i = 0; i < command.option.length; i++) {
-            if(!command.option[i].choices) {
-              if(command.option[i].type === 'string') slashCommand.addStringOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
-              if(command.option[i].type === 'integer') slashCommand.addIntegerOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
-              if(command.option[i].type === 'number') slashCommand.addNumberOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
-              if(command.option[i].type === 'boolean') slashCommand.addBooleanOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
-              if(command.option[i].type === 'user') slashCommand.addUserOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
-              if(command.option[i].type === 'channel') slashCommand.addChannelOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
-              if(command.option[i].type === 'role') slashCommand.addRoleOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
-              if(command.option[i].type === 'mentionable') slashCommand.addMentionableOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require))
-            } else {
-              if(command.option[i].type === 'string') slashCommand.addStringOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require).addChoices(...command.option[i].choices))
-              if(command.option[i].type === 'integer') slashCommand.addIntegerOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require).addChoices(...command.option[i].choices))
-              if(command.option[i].type === 'number') slashCommand.addNumberOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require).addChoices(...command.option[i].choices))
-              if(command.option[i].type === 'boolean') slashCommand.addBooleanOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require).addChoices(...command.option[i].choices))
-              if(command.option[i].type === 'user') slashCommand.addUserOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require).addChoices(...command.option[i].choices))
-              if(command.option[i].type === 'channel') slashCommand.addChannelOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require).addChoices(...command.option[i].choices))
-              if(command.option[i].type === 'role') slashCommand.addRoleOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require).addChoices(...command.option[i].choices))
-              if(command.option[i].type === 'mentionable') slashCommand.addMentionableOption(option => option.setName(command.option[i].name).setDescription(command.option[i].description).setRequired(command.option[i].require).addChoices(...command.option[i].choices))
-            }
-            
-          }
-        }
-        commands.push(slashCommand)
-      }
-      if(!command.slash) {
-        for(i = 0; i < command.name.length; i++) {
-          client.commands.set(command.name[i], command);
-        }
-      } 
+  for (const file of eventFiles) {
+    const filePath = path.join(eventsPath, file);
+    const event = require(filePath);
+    if (event.once) {
+      client.once(event.name, (...args) => event.execute(...args, client));
+    } else {
+      client.on(event.name, (...args) => event.execute(...args, client));
     }
+  }
+
+  for (const file of commandFiles) {
+    const filePath = path.join(commandsPath, file);
+    const command = require(filePath);
+
+    if (command.slash) {
+      const primaryName = Array.isArray(command.name) ? command.name[0] : command.name;
+      client.slashcommands.set(primaryName, command);
+
+      const slashCommand = new SlashCommandBuilder()
+        .setName(primaryName)
+        .setDescription(command.description || 'Komut açıklaması bulunmuyor.');
+
+      // Standart Seçenekler (Options)
+      const options = command.option || command.options;
+      if (options && Array.isArray(options)) {
+        for (const opt of options) {
+          addOptionTo(slashCommand, opt);
+        }
+      }
+
+      // Alt Komutlar (Subcommands)
+      if (command.subcommands && Array.isArray(command.subcommands)) {
+        for (const sub of command.subcommands) {
+          slashCommand.addSubcommand(subBuilder => {
+            subBuilder.setName(sub.name).setDescription(sub.description || 'Alt komut');
+            const subOptions = sub.option || sub.options;
+            if (subOptions && Array.isArray(subOptions)) {
+              for (const opt of subOptions) {
+                addOptionTo(subBuilder, opt);
+              }
+            }
+            return subBuilder;
+          });
+        }
+      }
+
+      commands.push(slashCommand);
+    }
+
+    if (!command.slash && command.name) {
+      const names = Array.isArray(command.name) ? command.name : [command.name];
+      for (const n of names) {
+        client.commands.set(n, command);
+      }
+    }
+  }
+
+  console.log(`[Yükleyici] ${client.slashcommands.size} Slash Komut ve ${client.commands.size} Prefix Komut yüklendi.`);
 };
 
 const rest = new REST({ version: '9' }).setToken(token);
 
 setTimeout(async () => {
-  rest.put(Routes.applicationCommands(botid), { body: commands }).catch(console.error);
+  if (commands.length > 0) {
+    console.log(`[Slash Kayıt] ${commands.length} komut Discord API'ye kaydediliyor...`);
+    rest.put(Routes.applicationCommands(botid), { body: commands })
+      .then(() => console.log(`[Slash Kayıt] ${commands.length} komut başarıyla Discord'a kaydedildi!`))
+      .catch(err => console.error('[Slash Kayıt Hatası]:', err));
+  }
 }, 500);
+
